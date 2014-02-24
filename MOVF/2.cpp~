@@ -1,0 +1,41 @@
+#include<cstdio>
+#include<cstdlib>
+#include<algorithm>
+#include<vector>
+#include<cstring>
+#include<cassert>
+using namespace std;
+
+int main(){
+	int t;
+	scanf("%d",&t);
+	int cost_of_mov[501],present[101];
+	while(t--){
+		memset(present,0,sizeof(present));
+		int n,k;
+		scanf("%d%d",&n,&k);
+		getchar();
+		for(int i=0;i<n;i++){
+			while(getchar()!='\n');
+			scanf("%d",cost_of_mov+i);
+			assert(cost_of_mov[i]<=100);
+			present[cost_of_mov[i]]++;
+			getchar();
+		}
+		int req;
+		int ans=0;
+		for(int i=0;i<n;i++)
+			for(int j=0;j<n;j++){
+				if(i!=j){
+					req=k-cost_of_mov[i]-cost_of_mov[j];
+					if(req<0 || req>100)continue;
+					if((req==cost_of_mov[i] && req==cost_of_mov[j]) && present[req]>=2)
+						ans+=present[req]-2;
+					else if((req==cost_of_mov[i] || req==cost_of_mov[j]) && present[req]>=1)
+						ans+=present[req]-1;
+					else ans+=present[req];
+				}
+			}			
+		printf("%lld\n",ans/6);
+	}
+}

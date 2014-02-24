@@ -1,0 +1,10 @@
+#include<stdio.h>
+int main(){
+	int t=50725;
+	int i,j,k,l;
+	while(t--){
+		scanf("%d%d%d%d",&i,&j,&k,&l);
+		if(k!=l)printf("%d %d\n",i,j);
+	}
+
+}

@@ -1,0 +1,44 @@
+<h2>Robot Game</h2>
+<p>
+There is a maze of <b>N</b>*<b>M</b> size consisting of unit blocks. At the start Robot has <b>RC</b> percentage of battery charged.
+Now Robot start from <b>1 st</b> row and move towards <b>N th</b> row. From the present block robot can move to a block in the next row, which is either on right or on left side of the present block. On moving to a block in <b>i th</b> row <b>j th</b> column, Robots battery charge will reduce by <b>C(i,j)</b> percent if <b>C(i,j)</b> is greater then 0, else it will be recharged by <b>C(i,j)</b> percent.
+For Example if present battery has 50 percent of charge, on moving to block with <b>C(i,j)</b> = 15, battery will have 35 ( 50 -15 ) percent of the charge. 
+<p>
+<p>
+Now the task is to find out the status of the battery in the end, if the Robot moves optimally to save maximum charge. ( Remember : Battery Charge will not exceed more than 100 percent, and Robot will not move further if Battery charge goes down to 0 percent ).
+<p>
+
+<h3>Input</h3>
+<p>
+First line of the input contains <b>T</b>, number of test cases.
+In Each test case</br>
+First line consists of three space separated integers <b>N</b>, <b>M</b> and <b>RC</b>, representing values as described in the question.</br>
+Next <b>N</b> line contains <b>M</b> space separated Integers,( starting from <b>1 st</b> row ). <b>j th</b> Integer in <b>i th</b> row is 
+<b>C(i,j)</b>, charged gained or reduced on moving to <b>i th</b> row <b>j th</b> column in the maze.</br>
+</p>
+
+<h3>Output</h3>
+<p>
+For each test case print a single line containing single integer <b>FC</b>, maximum possible percentage of charge in the battery when Robot reaches <b>N th</b> row. If Robot can not reach the <b>N th</b> row then print -1.
+</p>
+
+<h3>Constraints</h3>
+<ul>
+<li> 1 <= <b>T</b> <= 10 </li>
+<li> 1 <= <b>N,M</b> <= 500</li>
+<li> 0 <= <b>RC</b> <= 100</li>
+<li> -100 <= <b>C(i,j)</b> <= 100</li>
+</ul>
+
+<pre>
+<h3>Sample Input</h3>
+1
+4 4 50
+10 -10 10 -10
+-10 10 -10 10
+5 -5 5 -5
+-5 -5 -5 -5
+<h3>Sample Output</h3>
+70
+</pre>
+

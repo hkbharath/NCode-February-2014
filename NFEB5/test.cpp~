@@ -1,0 +1,17 @@
+#include<cstdio>
+#include<cstdlib>
+
+int main(){
+	int t,s;
+	int x=rand()%3832;
+	while(x--)rand();
+	t=10;
+	printf("%d\n",t);
+	while(t--){
+		s=11+rand()%200;
+		while(s--)
+			putchar(rand()%10+'A');
+		putchar('\n');	
+	}
+	
+}
